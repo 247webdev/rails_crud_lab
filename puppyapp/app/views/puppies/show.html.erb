@@ -1,14 +1,14 @@
 <!-- <p>Find me in app/views/puppies/show.html.erb</p> -->
 <h1>Here is the puppy!</h1>
   <p>
-    <!-- <a href="/puppies/<%= puppy.id %>/edit"> -->
-      <%= puppy.name %>, <%= puppy.age %>, <%= puppy.breed %>
+    <!-- <a href="/puppies/< %= puppy.id %>/edit"> -->
+      <%= @puppy.name %>, <%= @puppy.age %>, <%= @puppy.breed %>
     <!-- </a> -->
     <%= form_for @puppy, url: "/puppies/#{@puppy.id}", method: "DELETE" do |f| %>
-        <%= f.submit %>
+        <%= f.submit "Let this puppy go?" %>
     <% end %>
   </p>
 
 <a href="/puppies/">Come home puppy!</a>
-<a href="/puppies/<% puppy.id %>/edit">Edit this puppy!</a>
+<a href="/puppies/<% @puppy.id %>/edit">Edit this puppy!</a>
 <!-- <a href="/puppies/">Don't keep this puppy :(</a> # with _method delete -->
