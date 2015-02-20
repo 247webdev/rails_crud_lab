@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+# 7 restful routes
+  root 'puppies#index' #these coordinate with the actions which are found in the controller
+#pattern is VERB '/route', to: "controller#action"
+
+  get '/puppies', to: "puppies#index"
+
+  get '/puppies/new', to: "puppies#new"
+
+  get '/puppies/:id', to: "puppies#show"
+
+  get '/puppies/:id/edit', to: "puppies#edit"
+
+  post '/puppies', to: "puppies#create"
+
+  put '/puppies/:id', to: "puppies#update"
+
+  delete '/puppies', to: "puppies#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,11 @@
+<h1>Here are our puppies!</h1>
+<!-- <p>Find me in app/views/puppies/index.html.erb</p> -->
+<% @puppies.each do |puppy| %>
+  <p>
+    <a href="/puppies/<%= puppy.id %>/edit">
+      <%= puppy.name %>, <%= puppy.age %>, <%= puppy.breed %>
+    </a>
+  </p>
+<% end %>
+
+<a href="/puppies/new">Add a puppy!</a>

@@ -1,0 +1,26 @@
+<h1>Edit a puppy!</h1>
+<% if @puppy.errors.any? %>
+  <% @puppy.errors.full_messages.each do |error| %>
+    <p class="text-danger">
+      <%= error %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= form_for @puppy, url: "/puppies/#{@puppy.id}", method: "PUT" do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </p>
+  <p>
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+  </p>
+  </p>
+    <%= f.submit %>
+  <p>
+<% end %>
